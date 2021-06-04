@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package streams;
+
+service Test {
+    rpc Stream (StreamRequest) returns (stream Update) {}
+}
+
+message StreamRequest {
+    int64 nonce = 1;
+}
+
+message Update {
+    int64 counter = 1;
+}
